@@ -1261,6 +1261,7 @@ def export(cfg=DEFAULT_CFG):
     """Export a YOLOv model to a specific format."""
     cfg.model = cfg.model or 'yolov8n.yaml'
     cfg.format = cfg.format or 'torchscript'
+    cfg.imgsz = 1024
     from ultralytics import YOLO
     model = YOLO(cfg.model)
     model.export(**vars(cfg))
